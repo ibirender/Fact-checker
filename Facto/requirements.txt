@@ -1,0 +1,6 @@
+streamlit
+PyMuPDF
+groq
+tavily-python
+pandas
+requests
