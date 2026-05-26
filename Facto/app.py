@@ -8,7 +8,7 @@ import requests
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="FactGuard AI",
+    page_title="Fact Tracker",
     page_icon="🔍",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -337,7 +337,7 @@ except:
 
 st.markdown("""
 <div class="hero-section">
-    <div class="main-title">FactGuard AI</div>
+    <div class="main-title">Fact Tracker</div>
     <div class="subtitle">✦ Automated Claim Verification Engine ✦</div>
 </div>
 """, unsafe_allow_html=True)
@@ -417,4 +417,4 @@ if run:
             else:
                 st.warning("⚠️ No valid claims were extracted. Please try a different PDF or check the content format.")
 
-st.markdown('<div class="footer-text">FACTGUARD AI · POWERED BY GROQ · BUILT FOR COG CULTURE ASSESSMENT</div>', unsafe_allow_html=True)
+st.markdown('<div class="footer-text">FACT TRACKER</div>', unsafe_allow_html=True)
