@@ -11,7 +11,7 @@ st.set_page_config(
     page_title="Fact Tracker",
     page_icon="🔍",
     layout="wide",
-    initial_sidebar_ebar="collapsed",
+    initial_sidebar_state="collapsed",
 )
 
 # ── Custom CSS ────────────────────────────────────────────────────────────────
