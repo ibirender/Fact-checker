@@ -22,14 +22,13 @@ st.markdown("""
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body, [data-testid="stAppViewContainer"] {
-    background: #0a0a0f;
+    background: #050508;
     color: #e8e8f0;
     font-family: 'Syne', sans-serif;
 }
 
 [data-testid="stAppViewContainer"] {
-    background: radial-gradient(ellipse at 20% 20%, #1a0a2e 0%, #0a0a0f 50%),
-                radial-gradient(ellipse at 80% 80%, #0a1a2e 0%, transparent 50%);
+    background: #050508;
     min-height: 100vh;
 }
 
@@ -40,7 +39,7 @@ html, body, [data-testid="stAppViewContainer"] {
     font-weight: 800;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     letter-spacing: -2px;
-    background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%);
+    background: linear-gradient(135deg, #c4b5fd 0%, #93c5fd 50%, #6ee7b7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -51,8 +50,8 @@ html, body, [data-testid="stAppViewContainer"] {
 .subtitle {
     font-family: 'Space Mono', monospace;
     font-size: 0.85rem;
-    color: #6b7280;
-    letter-spacing: 3px;
+    color: #3d3d5c;
+    letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
 }
@@ -60,15 +59,15 @@ html, body, [data-testid="stAppViewContainer"] {
 .hero-section {
     text-align: center;
     padding: 3rem 1rem 2rem;
-    border-bottom: 1px solid rgba(167, 139, 250, 0.15);
+    border-bottom: 1px solid #1a1a2e;
     margin-bottom: 2.5rem;
 }
 
 .card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #07070d;
+    border: 1px solid #111118;
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 1.4rem 1.6rem 1.4rem 1.8rem;
     margin-bottom: 1rem;
     position: relative;
     overflow: hidden;
@@ -78,47 +77,61 @@ html, body, [data-testid="stAppViewContainer"] {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 2px;
+    height: 1.5px;
 }
 
-.card-verified::before  { background: linear-gradient(90deg, #34d399, #059669); }
-.card-inaccurate::before { background: linear-gradient(90deg, #fbbf24, #d97706); }
-.card-false::before      { background: linear-gradient(90deg, #f87171, #dc2626); }
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+}
+
+.card-verified::before  { background: linear-gradient(90deg, #10b981, #059669); }
+.card-verified::after   { background: #10b981; }
+
+.card-inaccurate::before { background: linear-gradient(90deg, #f59e0b, #d97706); }
+.card-inaccurate::after  { background: #f59e0b; }
+
+.card-false::before { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.card-false::after  { background: #ef4444; }
 
 .badge {
     display: inline-block;
     padding: 0.2rem 0.8rem;
     border-radius: 999px;
     font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
 }
 
-.badge-verified   { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
-.badge-inaccurate { background: rgba(251,191,36,0.15);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
-.badge-false      { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid rgba(248,113,113,0.3); }
+.badge-verified   { background: rgba(16,185,129,0.08); color: #10b981; border: 1px solid rgba(16,185,129,0.2); }
+.badge-inaccurate { background: rgba(245,158,11,0.08);  color: #f59e0b; border: 1px solid rgba(245,158,11,0.2); }
+.badge-false      { background: rgba(239,68,68,0.08);   color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
 
 .claim-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: #e8e8f0;
+    color: #c8c8d8;
     margin-bottom: 0.5rem;
     line-height: 1.5;
+    padding-left: 0.5rem;
 }
 
 .explanation {
     font-family: 'Space Mono', monospace;
-    font-size: 0.78rem;
-    color: #9ca3af;
-    line-height: 1.6;
+    font-size: 0.75rem;
+    color: #3d3d5c;
+    line-height: 1.7;
+    padding-left: 0.5rem;
 }
 
 .stat-box {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: #08080e;
+    border: 1px solid #111118;
     border-radius: 12px;
     padding: 1.2rem;
     text-align: center;
@@ -134,26 +147,26 @@ html, body, [data-testid="stAppViewContainer"] {
 
 .stat-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: #6b7280;
+    font-size: 0.65rem;
+    color: #3d3d5c;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .section-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.72rem;
-    color: #6b7280;
+    font-size: 0.68rem;
+    color: #3d3d5c;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid #0e0e18;
 }
 
 div.stButton > button {
     width: 100%;
-    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    background: linear-gradient(135deg, #5b21b6, #1d4ed8);
     color: white;
     border: none;
     padding: 0.85rem 2rem;
@@ -161,24 +174,24 @@ div.stButton > button {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     font-size: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 4px 24px rgba(91, 33, 182, 0.3);
 }
 
 div.stButton > button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.6);
+    box-shadow: 0 8px 32px rgba(91, 33, 182, 0.5);
 }
 
 .footer-text {
     font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    color: #374151;
+    font-size: 0.65rem;
+    color: #1e1e2e;
     text-align: center;
     padding: 2rem 0 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -227,7 +240,7 @@ Document text:
 {text[:6000]}
 \"\"\"
 """
-    
+
     try:
         if api_key.startswith("xai-"):
             # xAI (Grok) API Integration
@@ -262,67 +275,65 @@ Document text:
                 response_format={"type": "json_object"}
             )
             raw = response.choices[0].message.content.strip()
-        
+
         # Clean markdown
         raw = re.sub(r"^```json\s*", "", raw)
         raw = re.sub(r"```$", "", raw)
         raw = re.sub(r"^```\s*", "", raw)
-        
+
         # Parse JSON
-        data = json.loads(raw)
-        
+        parsed = json.loads(raw)
+
         # Handle different response formats
-        if isinstance(data, dict):
-            if "claims" in data:
-                claims_data = data["claims"]
-            elif "results" in data:
-                claims_data = data["results"]
+        if isinstance(parsed, dict):
+            if "claims" in parsed:
+                claims_data = parsed["claims"]
+            elif "results" in parsed:
+                claims_data = parsed["results"]
             else:
                 claims_data = []
-                for value in data.values():
+                for value in parsed.values():
                     if isinstance(value, list):
                         claims_data = value
                         break
-        elif isinstance(data, list):
-            claims_data = data
+        elif isinstance(parsed, list):
+            claims_data = parsed
         else:
             claims_data = []
-        
+
         # Validate each claim
         validated = []
         for claim in claims_data:
             if isinstance(claim, dict) and all(k in claim for k in ["claim", "status", "explanation"]):
                 validated.append(claim)
-        
+
         return validated
-        
+
     except Exception as e:
         st.error(f"API Error: {str(e)}")
         return []
 
 
-# ── UI ────────────────────────────────────────────────────────────────────────
+# ── API Key ───────────────────────────────────────────────────────────────────
 
-# ✅ FIX: API key automatically read from secrets (user ko nahi mangni)
 try:
-    # Try to get API key from Streamlit secrets (production)
     api_key = st.secrets["GROQ_API_KEY"]
 except:
-    # Fallback for local development (optional)
     api_key = os.environ.get("GROQ_API_KEY", "")
-    
-    # If still no key, show setup instructions (not ask user)
     if not api_key:
         st.error("""
         ⚠️ **API Key Missing**
-        
+
         Please add your Groq API key to Streamlit Secrets:
         1. Go to your app settings on Streamlit Cloud
         2. Add secret: `GROQ_API_KEY` = `your_key_here`
-        
+
         *For local development: set environment variable `GROQ_API_KEY`*
         """)
         st.stop()
+
+
+# ── UI ────────────────────────────────────────────────────────────────────────
 
 st.markdown("""
 <div class="hero-section">
@@ -330,8 +341,6 @@ st.markdown("""
     <div class="subtitle">✦ Automated Claim Verification Engine ✦</div>
 </div>
 """, unsafe_allow_html=True)
-
-# ❌ Removed API key input field - ab user se nahi mangega
 
 st.markdown('<div class="section-label">📄 Upload Document</div>', unsafe_allow_html=True)
 uploaded_file = st.file_uploader(
@@ -372,17 +381,17 @@ if run:
                     </div>""", unsafe_allow_html=True)
                 with col2:
                     st.markdown(f"""<div class="stat-box">
-                        <div class="stat-number" style="color:#34d399">{len(verified)}</div>
+                        <div class="stat-number" style="color:#10b981">{len(verified)}</div>
                         <div class="stat-label">Verified</div>
                     </div>""", unsafe_allow_html=True)
                 with col3:
                     st.markdown(f"""<div class="stat-box">
-                        <div class="stat-number" style="color:#fbbf24">{len(inaccurate)}</div>
+                        <div class="stat-number" style="color:#f59e0b">{len(inaccurate)}</div>
                         <div class="stat-label">Inaccurate</div>
                     </div>""", unsafe_allow_html=True)
                 with col4:
                     st.markdown(f"""<div class="stat-box">
-                        <div class="stat-number" style="color:#f87171">{len(false_)}</div>
+                        <div class="stat-number" style="color:#ef4444">{len(false_)}</div>
                         <div class="stat-label">False</div>
                     </div>""", unsafe_allow_html=True)
 
@@ -390,9 +399,9 @@ if run:
                 st.markdown('<div class="section-label">🔎 Detailed Results</div>', unsafe_allow_html=True)
 
                 for status_key, css_key, heading in [
-                    ("False", "false", "🚨 FALSE CLAIMS"),
+                    ("False",      "false",      "🚨 FALSE CLAIMS"),
                     ("Inaccurate", "inaccurate", "⚠️ INACCURATE CLAIMS"),
-                    ("Verified", "verified", "✅ VERIFIED CLAIMS"),
+                    ("Verified",   "verified",   "✅ VERIFIED CLAIMS"),
                 ]:
                     group = [c for c in claims if c.get("status") == status_key]
                     if group:
@@ -406,6 +415,6 @@ if run:
 </div>""", unsafe_allow_html=True)
                         st.markdown("<br>", unsafe_allow_html=True)
             else:
-                st.warning("⚠️ No valid claims were extracted from the document. Please try a different PDF or check the content format.")
+                st.warning("⚠️ No valid claims were extracted. Please try a different PDF or check the content format.")
 
 st.markdown('<div class="footer-text">FACTGUARD AI · POWERED BY GROQ · BUILT FOR COG CULTURE ASSESSMENT</div>', unsafe_allow_html=True)
